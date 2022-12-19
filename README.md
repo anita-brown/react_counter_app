@@ -258,9 +258,13 @@ Walk me through useState, useEffect and UseContext
 
 ### Ans
 -useState is a react Hook which allows the tracking of state in a react function component.
+
+
 -useEffect is a react Hook that allows the performance of side effects in a react components.
 Some examples of side effects are: fetching data, directly updating the DOM, and timers.
 useEffect accepts two arguments. which is the callback function and dependency array, The dependency array basically tells the hook to "only trigger when the dependency array changes". The second argument is sometimes optional.
+
+
 -useContext is a react hook used to create common data that can be accessed throughout the component hierarchy without passing the props down manually to each level. Context defined will be available to all the child components without involving “props”.
 
 
