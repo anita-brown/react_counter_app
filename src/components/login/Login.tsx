@@ -8,6 +8,7 @@ const Login = () => {
   useEffect(() => {
     if (localStorage.getItem("auth"))
     navigate("/", { replace: true });
+// eslint-disable-next-line react-hooks/exhaustive-deps
 },[])
   return (
     <div className="h-screen dark:bg-gray-900 flex">

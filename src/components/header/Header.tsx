@@ -8,6 +8,7 @@ const Header = () => {
   useEffect(() => {
     if (!localStorage.getItem("auth"))
       navigate("/login");
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [logout]);
 
   const handleLogout = (e: any) => {
