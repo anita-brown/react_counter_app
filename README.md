@@ -1,4 +1,11 @@
-# React Counter App
+# React Counter
+
+<img width="1440" alt="Screen Shot 2022-12-19 at 8 05 09 PM" src="https://user-images.githubusercontent.com/84588107/208501028-b5b16731-a274-43ae-a64c-d142c81e4424.png">
+<img width="1440" alt="Screen Shot 2022-12-19 at 8 05 24 PM" src="https://user-images.githubusercontent.com/84588107/208501069-2e76b890-5345-459c-bc34-9bab54943053.png">
+
+
+
+
 
 
 ## Question 1
