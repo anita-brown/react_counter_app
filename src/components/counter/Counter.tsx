@@ -1,16 +1,21 @@
-import React from 'react'
+import React from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { CounterState } from "../../redux/features/counterSlice";
+import { increment, decrement, reset } from "../../redux/features/counterSlice";
 
 const Counter = () => {
+  const counter = useSelector((state: CounterState) => state.counter.counter);
+  const dispatch = useDispatch()
   return (
-    <div>
-          <p>0</p>
-          <div>
-              <button></button>
-              <button></button>
-          </div>
-          <input placeholder='Enter input...' type="number" />
+    <main>
+      <p>{counter}</p>
+      <div className="flex justify-between">
+        <button onClick={()=> dispatch(increment())}>Increment</button>
+        <button onClick={()=> dispatch(decrement())}> Decrement</button>
       </div>
-  )
-}
+      <input placeholder="Enter input..." type="number" />
+    </main>
+  );
+};
 
-export default Counter 
+export default Counter;
