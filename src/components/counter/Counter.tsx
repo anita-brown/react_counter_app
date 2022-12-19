@@ -15,7 +15,7 @@ const Counter = () => {
   };
   return (
     <main className="flex flex-col gap-4 w-[100%] justify-center items-center">
-      <p className="text-center text-5xl lg:text-6xl font-bold text-white">{counter}</p>
+      <p className="text-center text-5xl lg:text-6xl font-bold text-gray-600">{counter}</p>
       <div className="flex lg:gap-4 gap-2 justify-between mt-4">
         <button
           className="text-x lg:text-xl text-gray-800 lg:py-2 lg:px-4 py-2 px-2 rounded bg-gradient-to-r from-yellow-500 to-yellow-200 rounded-lg shadow-sm hover:bg-gradient-to-l hover:from-yellow-500 hover:bg-yellow-300 font-semibold"

@@ -12,6 +12,7 @@ The State generally refers to data or properties, its initial value can be a num
 Example: 
 import {useState} from 'react'
 const [value, setValue] = useState("")
+
 The first parameter is used to set the value while the second parameter is used to update the value i.e the first parameter
 
 2. useEffect Hook: it allows the performance of side effects in a react components.
@@ -19,7 +20,7 @@ Some examples of side effects are: fetching data, directly updating the DOM, and
 useEffect accepts two arguments. which is the function and dependency array, The second argument is sometimes optional.
 
 Example:
-useEffect(<function>, <dependency>)
+useEffect(()=> {}, [])
 
 3. useContext Hook: The context hook is a way to manage state globally.
 It can be used together with the useState Hook to share state between deeply nested components more easily than with useState alone.
