@@ -14,11 +14,11 @@ const Counter = () => {
     }
   };
   return (
-    <main>
-      <p className="text-center text-5xl lg:text-6xl font-bold">{counter}</p>
-      <div className="flex justify-between mt-4">
+    <main className="flex flex-col gap-4 w-[100%] justify-center items-center">
+      <p className="text-center text-5xl lg:text-6xl font-bold text-white">{counter}</p>
+      <div className="flex lg:gap-4 gap-2 justify-between mt-4">
         <button
-          className="text-x lg:text-xl text-gray-800 lg:py-2 lg:px-4 py-2 px-2 rounded bg-gradient-to-r from-green-500 to-green-200 rounded-lg shadow-sm hover:bg-gradient-to-l hover:from-green-500 hover:bg-green-300 font-semibold"
+          className="text-x lg:text-xl text-gray-800 lg:py-2 lg:px-4 py-2 px-2 rounded bg-gradient-to-r from-yellow-500 to-yellow-200 rounded-lg shadow-sm hover:bg-gradient-to-l hover:from-yellow-500 hover:bg-yellow-300 font-semibold"
           onClick={() => dispatch(increment())}
         >
           Increment

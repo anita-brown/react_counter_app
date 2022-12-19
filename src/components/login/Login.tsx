@@ -1,35 +1,68 @@
-import React from 'react'
+import { Formik } from "formik";
+import React, { useEffect,  } from "react";
+import { useNavigate } from "react-router-dom";
+import { schema } from "../../utils/Utils";
 
 const Login = () => {
-  const handleFormSubmit = (e: any) => {
-    e.preventDefault();
-
-    let email = e.target.elements.email?.value;
-    let password = e.target.elements.password?.value;
-
-    console.log(email, password);
-  };
+  const navigate = useNavigate();
+  useEffect(() => {
+    if (localStorage.getItem("auth"))
+    navigate("/", { replace: true });
+},[])
   return (
-    <div className="h-screen flex bg-gray-bg1">
+    <div className="h-screen dark:bg-gray-900 flex">
       <div className="w-full max-w-md m-auto bg-white rounded-lg border border-primaryBorder shadow-md py-10 px-16">
         <h1 className="text-2xl font-medium text-primary mt-4 mb-12 text-center">Log in 🔐</h1>
+        <Formik
+          validationSchema={schema}
+          initialValues={{ email: "", password: "" }}
+          onSubmit={(values: any) => {
+            navigate("/", { replace: true });
+            localStorage.setItem("auth", "true");
+          }}
+        >
+          {({ values, errors, touched, handleChange, handleBlur, handleSubmit }) => (
+            <form onSubmit={handleSubmit}>
+              <div>
+                <label htmlFor="email">Email</label>
+                <input
+                  onChange={handleChange}
+                  type="email"
+                  name="email"
+                  value={values.email}
+                  onBlur={handleBlur}
+                  className={`w-full p-2 text-primary border rounded-md outline-none text-sm transition duration-150 ease-in-out mb-2`}
+                  id="email"
+                  placeholder="Your Email"
+                />
+                <p className="text-red-400 text-xs">{errors.email && touched.email && errors.email}</p>
+              </div>
+              <div>
+                <label htmlFor="password">Password</label>
+                <input
+                  onChange={handleChange}
+                  type="password"
+                  name="password"
+                  value={values.password}
+                  onBlur={handleBlur}
+                  className={`w-full p-2 text-primary border rounded-md outline-none text-sm transition duration-150 ease-in-out mb-2`}
+                  id="password"
+                  placeholder="Your Password"
+                />
+                <p className="text-red-400 text-xs">{errors.password && touched.password && errors.password}</p>
+              </div>
 
-        <form onSubmit={handleFormSubmit}>
-          <div>
-            <label htmlFor="email">Email</label>
-            <input type="email" className={`w-full p-2 text-primary border rounded-md outline-none text-sm transition duration-150 ease-in-out mb-4`} id="email" placeholder="Your Email" />
-          </div>
-          <div>
-            <label htmlFor="password">Password</label>
-            <input type="password" className={`w-full p-2 text-primary border rounded-md outline-none text-sm transition duration-150 ease-in-out mb-4`} id="password" placeholder="Your Password" />
-          </div>
-
-          <div className="flex justify-center items-center mt-6">
-            <button className='bg-green-600 py-2 px-4 text-sm text-white rounded border border-green-300 focus:outline-none font-semibold focus:border-green-dark'>Login</button>
-          </div>
-        </form>
+              <div className="flex justify-center items-center mt-6">
+                <button type="submit" className="bg-gray-600 py-2 px-4 text-sm text-white rounded border border-gray-300 focus:outline-none font-semibold focus:border-gray-dark">
+                  Login
+                </button>
+              </div>
+            </form>
+          )}
+        </Formik>
       </div>
     </div>
   );
 };
-export default Login
+export default Login;
+
