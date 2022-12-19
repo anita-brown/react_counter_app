@@ -18,8 +18,11 @@ Explain the main hooks in React and give examples.
 1. useState Hook: it allows the tracking of state in a react function component.
 
 The State generally refers to data or properties, its initial value can be a number, string, array, object or boolean 
+
 Example: 
+
 import {useState} from 'react'
+
 const [value, setValue] = useState("")
 
 The first parameter is used to set the value while the second parameter is used to update the value i.e the first parameter
