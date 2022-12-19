@@ -274,15 +274,23 @@ Explain how to build components in React
 ### Ans
 
 Components in react can be built both functional and class-based
-For a Functional component, it requires to create a javascript function the only difference in react is it returns a JSX react element, a special type of HTML adapted for javascript
+For a Functional component, it requires to create a javascript function the only difference in react is it returns a JSX react element, a special type of HTML adapted for javascript.
+
 Example:
+
 import React from 'react'
-function Banner(){
+
+function Banner()
+{
   return <div> Hello World </div>;
 }
+
 For Class based components, it creates React components with full life-cycle methods and state. This uses the ES6 Class methods.
+
 Example:
+
 import React from 'react'
+
 class Banner extends React.Component {
   render(){
     return <div> Hello World </div> 
